@@ -20,6 +20,8 @@ nav:
       - Overview: snack/overview.md
       - Polymorphism: snack/polymorphism/polymorphism.md
       - Initialize MkDocs: snack/initialize/initial.md
+      - Javascript: snack/javascript/javascript.md
+      - JS Algorithms: snack/javascript/js_algorithms.md
   - About:
       - About Me: about/about.md
       - License: about/LICENSE.md
