@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+: "${PGDATA:=/workspaces/.pgsql/data}"
+mkdir -p "$PGDATA" "$HOME/.pg_ctl/log" "$HOME/.pg_ctl/sockets"
+if [ ! -f "$PGDATA/PG_VERSION" ]; then
+initdb --auth=trust -D "$PGDATA" >/dev/null
+fi
+pg_ctl -D "$PGDATA" -l "$HOME/.pg_ctl/log"/server.log -o "-k $HOME/.pg_ctl/sockets" start

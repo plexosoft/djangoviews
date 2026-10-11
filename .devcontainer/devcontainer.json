@@ -1,0 +1,35 @@
+{
+    "name": "DjangoViews",
+    "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "vscode",
+    // Environment similar to your Gitpod vars
+    "containerEnv": {
+        "PGDATA": "/workspaces/.pgsql/data",
+        "PGDATABASE": "postgres",
+        "PORT": "8080",
+        // "IP": "0.0.0.0",
+        "DANGEROUSLY_DISABLE_HOST_CHECK": "true"
+    },
+    // Run once after the container is created (installs Node via nvm, Python deps, prepares PG scripts)
+    "postCreateCommand": "/bin/bash .devcontainer/scripts/post-create.sh",
+    // Run at each container start (starts PostgreSQL like your old pg_start)
+    "postStartCommand": "/bin/bash .devcontainer/scripts/post-start.sh",
+    // VS Code extensions migrated from your Gitpod config
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers",
+                "formulahendry.auto-close-tag",
+                "eventyret.bootstrap-4-cdn-snippet",
+                "HookyQR.beautify",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    }
+}

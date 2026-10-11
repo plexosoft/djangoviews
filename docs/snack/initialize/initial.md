@@ -101,29 +101,38 @@
     **Add the Following Content to `ci.yml`:**
 
     ```yaml
+
     name: ci
+
     on:
-      push:
+    push:
         branches:
-          - master
-          - main
+        - master
+        - main
+
     permissions:
-      contents: write
+    contents: write
+
     jobs:
-      deploy:
+    deploy:
         runs-on: ubuntu-latest
+
         steps:
-          - uses: actions/checkout@v3
-          - uses: actions/setup-python@v4
+        - uses: actions/checkout@v4
+
+        - uses: actions/setup-python@v5
             with:
-              python-version: 3.x
-          - uses: actions/cache@v2
+            python-version: "3.x"
+
+        - uses: actions/cache@v4
             with:
-              key: ${{ github.ref }}
-              path: .cache
-          - run: pip install mkdocs-material
-          - run: pip install pillow cairosvg
-          - run: mkdocs gh-deploy --force
+            key: ${{ runner.os }}-${{ github.ref }}
+            path: .cache
+
+        - run: pip install mkdocs-material pillow cairosvg
+
+        - run: mkdocs gh-deploy --force
+
     ```
 
 6. **Move `ci.yml` to `workflows` Directory**: This makes sure GitHub Actions recognizes your workflow.
