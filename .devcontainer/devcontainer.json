@@ -6,6 +6,9 @@
     },
     "remoteUser": "vscode",
     // Environment similar to your Gitpod vars
+    "remoteEnv": {
+        "HOME": "/home/vscode"
+    },
     "containerEnv": {
         "PGDATA": "/workspaces/.pgsql/data",
         "PGDATABASE": "postgres",

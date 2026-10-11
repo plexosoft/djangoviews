@@ -2,7 +2,13 @@ core.Microsoft*
 core.mongo*
 core.python*
 env.py
+.venv
+venv/
 __pycache__/
 *.py[cod]
 node_modules/
+# .github/ not necessary just yet
 cloudinary_python.txt
+.ssh/
+id_plexosoft
+db.sqlite3
