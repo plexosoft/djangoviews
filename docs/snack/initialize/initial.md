@@ -22,8 +22,8 @@ If the documentation belongs to a Django project, Django and the application's o
 For a new documentation project, create and enter a directory:
 
 ```bash
-mkdir my-documentation
-cd my-documentation
+mkdir docs
+cd docs
 ```
 
 For an existing Django or Python repository, open the repository root instead. Do not create a second project directory inside the existing repository unless that is intentional.
@@ -51,25 +51,26 @@ py -3 -m venv .venv
 Install the version used by this project's deployment workflow:
 
 ```bash
-python -m pip install zensical
+pip3 install zensical
 ```
 
 Verify the installation:
 
 ```bash
 zensical --version
+pip3 freeze > requirements.txt
 ```
 
-To keep the documentation dependencies reproducible, create a dedicated requirements file:
+To keep the documentation dependencies reproducible, the last command will create a dedicated requirements file:
 
 ```text
-# requirements-docs.txt
+# requirements.txt
 ```
 
-Install it with:
+Install it with, when needed:
 
 ```bash
-python -m pip install -r requirements-docs.txt
+pip3 install -r requirements.txt
 ```
 
 If the repository already has a `requirements.txt` for the Django application, you can add Zensical there instead. A separate documentation requirements file is useful when application and documentation dependencies are managed independently.
@@ -135,7 +136,7 @@ A simple structure could look like this:
 │   │   └── mathjax.js
 │   └── stylesheets/
 │       └── extra.css
-├── requirements-docs.txt
+├── requirements.txt
 └── zensical.toml
 ```
 
@@ -459,7 +460,7 @@ The logo and favicon paths are relative to `docs/`, not the repository root.
 To install the exact version used by the deployment workflow:
 
 ```bash
-python -m pip install --upgrade zensical
+pip3 install --upgrade zensical
 ```
 
 To update to a newer available version, change the version deliberately and update the pinned version in both your local dependency file and GitHub Actions workflow.
@@ -467,10 +468,10 @@ To update to a newer available version, change the version deliberately and upda
 For example:
 
 ```bash
-python -m pip install --upgrade zensical
+pip3 install --upgrade zensical
 ```
 
-Then update `requirements-docs.txt` and the `pip install` command in `.github/workflows/ci.yml` so local builds and CI use the same version.
+Then update `requirements.txt` and the `pip install` command in `.github/workflows/ci.yml` so local builds and CI use the same version.
 
 After upgrading, perform a clean build:
 
@@ -569,7 +570,7 @@ This is an application environment or dependency issue, not a Zensical installat
 If you are maintaining an older Django project that requires a Django version below 4, install the appropriate version for that application:
 
 ```bash
-python -m pip install 'django<4'
+pip3 install 'django<4'
 ```
 
 Do not install or downgrade Django solely to make Zensical work. Check the Django project's own dependency requirements and Python compatibility before changing its version.
@@ -577,7 +578,7 @@ Do not install or downgrade Django solely to make Zensical work. Check the Djang
 Other application dependencies, such as Gunicorn and `psycopg2`, are only necessary when required by the Django application:
 
 ```bash
-python -m pip install gunicorn psycopg2
+pip3 install gunicorn psycopg2
 ```
 
 ## 12. Multi-language documentation
@@ -786,7 +787,7 @@ Make sure the following files are committed:
 
 ```text
 zensical.toml
-requirements-docs.txt
+requirements.txt
 .github/workflows/ci.yml
 docs/
 ```
@@ -822,7 +823,7 @@ git push
 Make sure the virtual environment is activated and Zensical is installed:
 
 ```bash
-python -m pip install zensical
+pip3 install zensical
 ```
 
 ### Build errors after changing the configuration
