@@ -17,17 +17,6 @@ You need:
 
 If the documentation belongs to a Django project, Django and the application's other dependencies should be installed separately. Zensical does not require Django, Gunicorn, or a database driver to build documentation.
 
-### 1.1 Create or open your project
-
-For a new documentation project, create and enter a directory:
-
-```bash
-mkdir docs
-cd docs
-```
-
-For an existing Django or Python repository, open the repository root instead. Do not create a second project directory inside the existing repository unless that is intentional.
-
 ### 1.2 Create a virtual environment
 
 It is recommended to install Zensical in a virtual environment so its dependencies remain separate from the rest of your Python environment.
@@ -51,6 +40,7 @@ py -3 -m venv .venv
 Install the version used by this project's deployment workflow:
 
 ```bash
+pip3 install Django
 pip3 install zensical
 ```
 
