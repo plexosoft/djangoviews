@@ -1,6 +1,7 @@
 # GENERAL
 [project]
 site_name = "DjangoViews by Frank Arellano"
+site_url = "https://plexosoft.github.io/djangoviews/"
 copyright = """
 &copy; 2023 by <a href="https://github.com/plexosoft" target="_blank" rel="noopener">Frank Arellano</a>
 using
