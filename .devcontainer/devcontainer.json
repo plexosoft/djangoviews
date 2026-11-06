@@ -30,7 +30,6 @@
                 "ms-toolsai.jupyter-renderers",
                 "formulahendry.auto-close-tag",
                 "eventyret.bootstrap-4-cdn-snippet",
-                "HookyQR.beautify",
                 "ms-azuretools.vscode-docker"
             ]
         }

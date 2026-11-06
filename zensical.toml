@@ -1,0 +1,128 @@
+# GENERAL
+[project]
+site_name = "DjangoViews by Frank Arellano"
+copyright = """
+&copy; 2023 by <a href="https://github.com/plexosoft" target="_blank" rel="noopener">Frank Arellano</a>
+using
+<a href="https://zensical.org/" target="_blank" rel="noopener">Zensical</a>
+"""
+
+# NAVIGATION
+nav = [
+  { "Home" = "index.md" },
+
+  { "CBVs" = [
+    { "Overview" = "oop/overview.md" },
+    { "What Are CBVs?" = "oop/class/class.md" },
+    { "What Are Django Views?" = "oop/class/django_views.md" },
+    { "Traversing" = [
+      { "CustomLoginView" = "oop/traversing/login_view.md" },
+      { "CustomSignupView" = "oop/traversing/signup_view.md" },
+      { "CustomLogoutView" = "oop/traversing/logout_view.md" },
+      { "HomepageProductServiceView" = "oop/traversing/product_service_view.md" },
+    ] },
+  ] },
+
+  { "FBVs" = [
+    { "Overview" = "fbvs/overview.md" },
+    { "What Are FBVs?" = "fbvs/fbvs/fbvs.md" },
+    { "Traversing" = [
+      { "Placeholder" = "fbvs/traversing/placeholder.md" },
+    ] },
+  ] },
+
+  { "Snack" = [
+    { "Overview" = "snack/overview.md" },
+    { "Polymorphism" = "snack/polymorphism/polymorphism.md" },
+    { "Initialize Zensical" = "snack/initialize/initial.md" },
+    # { "Javascript" = "snack/javascript/javascript.md" },
+    # { "JS Algorithms" = "snack/javascript/js_algorithms.md" },
+  ] },
+
+  { "About" = [
+    { "About Me" = "about/about.md" },
+    { "License" = "about/LICENSE.md" },
+  ] },
+
+  { "Credits" = [
+    { "Acknowledgement" = "credits/credits.md" },
+  ] },
+]
+
+# THEME
+[project.theme]
+name = "material"
+logo = "assets/img/logo.png"
+
+font.text = "Roboto"
+font.code = "Roboto Mono"
+
+features = [
+  "navigation.tabs",
+  "navigation.sections",
+  "toc.integrate",
+  "navigation.top",
+  "search.suggest",
+  "search.highlight",
+  "content.tabs.link",
+  "content.code.annotation",
+  "content.code.copy",
+]
+
+# LIGHT MODE
+[[project.theme.palette]]
+scheme = "default"
+primary = "white"
+accent = "indigo"
+
+[project.theme.palette.toggle]
+icon = "lucide/toggle-right"
+name = "Switch to dark mode"
+
+# DARK MODE
+[[project.theme.palette]]
+scheme = "slate"
+primary = "black"
+accent = "yellow"
+
+[project.theme.palette.toggle]
+icon = "lucide/toggle-left"
+name = "Switch to light mode"
+
+# EXTRA
+[[project.extra.social]]
+icon = "fontawesome/brands/github-alt"
+link = "https://github.com/plexosoft"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/twitter"
+link = "https://twitter.com/plexosoft"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/in/arellanofrank/"
+
+# MARKDOWN EXTENSIONS
+[project.markdown_extensions]
+
+tables = {}
+admonition = {}
+footnotes = {}
+attr_list = {}
+
+pymdownx.highlight.anchor_linenums = true
+pymdownx.inlinehilite = {}
+pymdownx.snippets = {}
+pymdownx.arithmatex.generic = true
+pymdownx.details = {}
+pymdownx.superfences = {}
+pymdownx.mark = {}
+pymdownx.critic = {}
+pymdownx.caret = {}
+pymdownx.keys = {}
+pymdownx.tilde = {}
+pymdownx.tabbed.alternate_style = true
+
+# ZENSICAL EMOJI SUPPORT
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
